@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header {
+    text-align: center;
+    padding: 3rem;
+    animation: slideDown 2s ease-out;
+}
+
+header h1 {
+    color: #ff004d;
+    font-size: 3.5rem;
+    animation: colorPulse 3s infinite alternate;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+.subheading {
+    color: #ff66a3;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+section {
+    width: 80%;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+section h2 {
+    color: #ff66a3;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s;
+}
+
+/* Configurações da grade de memórias */
+.memory-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilização para cada item de memória */
+.memory-item {
+    width: 45%; /* Ajuste conforme o layout desejado, ex: 45% para duas fotos lado a lado */
+    max-width: 200px; /* Limita o tamanho máximo para manter uma boa proporção */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 0, 77, 0.6);
+}
+
+/* Estilização das imagens dentro dos itens de memória */
+.memory-item img {
+    width: 100%;
+    height: 180px; /* Define a altura para cortar a imagem e ajustar ao layout */
+    object-fit: cover; /* Preenche o item de memória, mantendo o foco central da imagem */
+    border-radius: 15px;
+}
+
+/* Descrição da memória */
+.memory-description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ff66a3;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+
+.quotes .quote-text {
+    font-size: 1.5rem;
+    color: #ff004d;
+    font-style: italic;
+    animation: textFade 3s infinite alternate;
+}
+
+.letters, .songs {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    animation: fadeInUp 1.5s;
+}
+
+.time-together #countup {
+    font-size: 2rem;
+    color: #ff004d;
+    font-weight: bold;
+    margin-top: 1rem;
+    animation: fadeInUp 2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes colorPulse {
+    from { color: #ff004d; }
+    to { color: #ff66a3; }
+}
+
+@keyframes textFade {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
